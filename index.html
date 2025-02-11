@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Secrset?</title>
+    <link rel="stylesheet" href="style2.css" type="text/css">
+    <link rel="icon" href="psyduck.svg" type="image/svg+xml">
+</head>
+<body>
+    <div>
+    <div class="card">
+        <div class="button-container" style="display: flex; align-items: center;">
+            <h1 style="font-size: 4em; margin-top: 0.8em;">Hi Yas!</h1>
+            <button style="margin-left: 4em; width: 6.25em;"> 
+                <svg height="2em" width="2em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0H24V24H0z" fill="none"></path><path d="M16.5 3C19.538 3 22 5.5 22 9c0 7-7.5 11-10 12.5C9.5 20 2 16 2 9c0-3.5 2.5-6 5.5-6C9.36 3 11 4 12 5c1-1 2.64-2 4.5-2z"></path></svg>
+            </button>
+        </div>
+        <p style="font-size: 2.825em; margin-bottom: 0.6em;">super special countdown</p> 
+    </div>
+    <div class="card2">
+        <div class="container">
+            <div class="preloader">
+            <span></span>
+            <span></span>
+            <span></span>
+            </div>
+            <div class="shadow"></div> 
+        </div>
+        <div class="launch-time">
+                <div class="marg">
+                    <p id="days" style="font-size: 1.5625em;">00</p>
+                    <span>Days</span>
+                </div>
+                <div class="marg">
+                    <p id="hours" style="font-size: 1.5625em;">00</p>
+                    <span>Hours</span>
+                </div>
+                <div class="marg">
+                    <p id="minutes" style="font-size: 1.5625em;">00</p>
+                    <span>Minutes</span>
+                </div>
+                <div class="marg">
+                    <p id="seconds" style="font-size: 1.5625em;">00</p>
+                    <span>Seconds</span>
+            </div>
+        </div>
+    </div>
+</div>
+    <script>
+        var countDownDate = new Date("Feb 14, 2025 00:00:00").getTime();
+        var x = setInterval(function(){
+            var now = new Date().getTime();
+            var dis = countDownDate - now;
+
+            var days = Math.floor(dis / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((dis % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((dis % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((dis % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+
+            if (dis <= 0) {
+                clearInterval(x);
+                window.location.href = "./Flower/index.html";
+            }
+
+        }, 1000);
+
+    </script>
+</body>
+</html>
