@@ -192,7 +192,7 @@ body {
   height: 10vmin;
   background-color: rgba(255, 255, 110, 0.523);
   border-radius: 50%;
-  top: calc(50% - 42px); /* Move 20px more to the top */
+  top: calc(50% - 2.625em); /* Move 20px more to the top */
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
   animation: grow-pistil 2s forwards;
@@ -209,7 +209,7 @@ body {
   left: calc(50% + 1.0625em);
   transform: translate(-50%, -50%) rotate(30deg) scale(0);
   animation: grow-pistil-rotated 2s forwards;
-  z-index: 2; /* Ensure its is in front of the white circle */
+  z-index: 2; /* Ensure it is in front of the white circle */
 }
 
 @keyframes grow-pistil {
