@@ -173,6 +173,7 @@ body {
   height: 4vmin;
   border-radius: 50%;
   background-color: #fff;
+  z-index: 1; /* Ensure it is behind the pistil */
 }
 .flower__white-circle::after {
   content: "";
@@ -185,11 +186,54 @@ body {
   border-radius: inherit;
   background-image: repeating-linear-gradient(135deg, rgba(255, 185, 185, 0.344) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(112.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(112.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(22.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(22.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(157.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), linear-gradient(90deg, #2d0774ee, #3d064824);
 }
+.flower__pistil {
+  position: absolute;
+  width: 0.6vmin;
+  height: 10vmin;
+  background-color: rgba(255, 255, 110, 0.523);
+  border-radius: 50%;
+  top: calc(50% - 42px); /* Move 20px more to the top */
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: grow-pistil 2s forwards;
+  z-index: 2; /* Ensure it is in front of the white circle */
+}
+
+.flower__pistil--rotated {
+  position: absolute;
+  width: 0.6vmin;
+  height: 10vmin;
+  background-color: rgba(255, 255, 110, 0.523);
+  border-radius: 50%;
+  top: calc(50% - 2.625em); /* Move 20px more to the top */
+  left: calc(50% + 1.0625em);
+  transform: translate(-50%, -50%) rotate(30deg) scale(0);
+  animation: grow-pistil-rotated 2s forwards;
+  z-index: 2; /* Ensure it is in front of the white circle */
+}
+
+@keyframes grow-pistil {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes grow-pistil-rotated {
+  0% {
+    transform: translate(-50%, -50%) rotate(30deg) scale(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(30deg) scale(1);
+  }
+}
 .flower__line {
   height: 55vmin;
   width: 1.5vmin;
   background-image: linear-gradient(to left, rgba(255, 185, 185, 0.344), transparent, rgba(255, 152, 152, 0.2)), linear-gradient(to top, transparent 10%, #147a20, #063500);
-  box-shadow: inset 0 0 2px rgba(24, 62, 0, 0.866);
+  box-shadow: inset 0 0 2px rgba(75, 131, 40, 0.866);
   animation: grow-flower-tree 4s backwards;
 }
 .flower__line__leaf {
@@ -981,6 +1025,7 @@ body {
     transform: scale(0);
   }
 }
+
 .container * {
   animation-play-state: paused !important;
 }

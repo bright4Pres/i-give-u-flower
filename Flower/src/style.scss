@@ -7,7 +7,7 @@
 }
 
 :root {
-  --dark-color: #ffd7d7;
+  --dark-color: #000;
 }
 
 body {
@@ -40,26 +40,46 @@ body {
     ),
     repeating-linear-gradient(
       220deg,
-      #ffd7d7 0px,
-      #ffd7d7 19px,
+      rgb(0, 0, 0) 0px,
+      rgb(0, 0, 0) 19px,
       transparent 19px,
       transparent 22px
     ),
     repeating-linear-gradient(
       189deg,
-      #ffd7d7 0px,
-      #ffd7d7 19px,
+      rgb(0, 0, 0) 0px,
+      rgb(0, 0, 0) 19px,
       transparent 19px,
       transparent 22px
     ),
     repeating-linear-gradient(
       148deg,
-      #ffd7d7 0px,
-      #ffd7d7 19px,
+      rgb(0, 0, 0) 0px,
+      rgb(0, 0, 0) 19px,
       transparent 19px,
       transparent 22px
-    ),
-    linear-gradient(90deg, rgb(4, 117, 17), rgb(240, 240, 240));
+    );
+}
+
+.flower__pistil {
+  position: absolute;
+  width: 2vmin;
+  height: 2vmin;
+  background-color: yellow;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: grow-pistil 2s forwards;
+}
+
+@keyframes grow-pistil {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
 
 .flowers {
