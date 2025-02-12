@@ -199,17 +199,43 @@ body {
   z-index: 2; /* Ensure it is in front of the white circle */
 }
 
+.flower__pistil::before {
+  content: '';
+  position: absolute;
+  top: -0.7em; /* Move 10px upward */
+  left: 60%;
+  width: 0.6vmin;
+  height: 2vmin;
+  background-color: rgb(255, 255, 110);
+  transform: translateX(-50%) rotate(-45deg); /* Adjust the angle as needed */
+  transform-origin: bottom center;
+  border-radius: 50%;
+}
+
 .flower__pistil--rotated {
   position: absolute;
   width: 0.6vmin;
   height: 10vmin;
-  background-color: rgba(255, 255, 110, 0.523);
+  background-color: rgba(255, 255, 110, 0.512);
   border-radius: 50%;
   top: calc(50% - 2.625em); /* Move 20px more to the top */
   left: calc(50% + 1.0625em);
   transform: translate(-50%, -50%) rotate(30deg) scale(0);
   animation: grow-pistil-rotated 2s forwards;
   z-index: 2; /* Ensure it is in front of the white circle */
+}
+
+.flower__pistil--rotated::before {
+  content: '';
+  position: absolute;
+  top: -0.7em; /* Move 10px upward */
+  left: 60%;
+  width: 0.6vmin;
+  height: 2vmin;
+  background-color: rgba(255, 255, 110, 0.981);
+  transform: translateX(-50%) rotate(-45deg); /* Adjust the angle as needed */
+  transform-origin: bottom center;
+  border-radius: 50%;
 }
 
 @keyframes grow-pistil {
