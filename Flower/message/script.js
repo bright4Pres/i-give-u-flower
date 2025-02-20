@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setTimeout(() => {
       modal.classList.add('show');
-    }, 0);
+    }, 1200);
   });
 
   closeModalButton.addEventListener('click', () => {
