@@ -13,7 +13,7 @@ html {
 	height: 100vh;
 	display: grid;
 	font-family: "Staatliches", cursive;
-	background: #d83565;
+	background: #191987;
 	color: black;
 	font-size: 14px;
 	letter-spacing: 0.1em;
@@ -97,21 +97,21 @@ html {
 }
 
 .date .june-29 {
-	color: #d83565;
+	color: #653fff;
 	font-size: 20px;
 }
 
 .show-name {
 	font-size: 32px;
 	font-family: "Nanum Pen Script", cursive;
-	color: #d83565;
+	color: #7092ff;
 }
 
 .show-name h1 {
 	font-size: 48px;
 	font-weight: 700;
 	letter-spacing: 0.1em;
-	color: #4a437e;
+	color: #1a0a97;
 }
 
 .time {
@@ -366,12 +366,12 @@ a {
 }
 
 .button.is-primary {
-  background-color: #d83565;
+  background-color: #1a0a97;
   color: #fff;
 }
 
 .button.is-primary:hover, .button.is-primary:focus {
-  background-color: #aa2049;
+  background-color: #10065c;
 }
 
 .icon-button {
