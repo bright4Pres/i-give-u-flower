@@ -97,7 +97,7 @@ html {
 }
 
 .date .june-29 {
-	color: #653fff;
+	color: #2100a3;
 	font-size: 20px;
 }
 
@@ -191,7 +191,7 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.333);
   backdrop-filter: blur(5px);
   justify-content: center;
   align-items: center;
@@ -241,7 +241,7 @@ a {
 }
 
 .modal.show .modal-container {
-  animation: modalFadeIn 0.5s ease-out;
+  animation: modalFadeIn 0.4s ease-in-out;
 }
 
 @media (max-width: 600px) {
