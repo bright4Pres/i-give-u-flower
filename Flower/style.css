@@ -11,17 +11,59 @@
   --dark-color: #000;
 }
 
+/* From Uiverse.io by barisdogansutcu */ 
+.password {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 1em;
+  opacity: 0; /* Initial opacity for animation */
+  animation: fade-in 2s 2s forwards; /* Apply fade-in animation with delay */
+}
+.password input {
+  width: 30px;
+  height: 40px;
+  text-align: center;
+  font-family: "Delicious Handrawn", serif;
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 2px #fff34d;
+  font-size: 20px;
+  color: white;
+  outline: none;
+}
+
+.black_card {
+  z-index: 100; 
+  position: absolute;
+  top: 65%;
+  left: 6%;
+  width: 300px;
+  height: 140px;
+  border-radius: 30px;
+  background: #212121;
+  box-shadow: 15px 15px 30px rgb(23, 23, 23),
+              -15px -15px 30px rgb(23, 23, 23);
+  transform: scale(0); /* Initial scale for animation */
+  animation: pop-up 2s forwards; /* Apply pop-up animation */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+ 
 .typewriter {
   display: inline-block;
-  z-index: 100; /* Ensure it appears above other elements */
+  z-index: 100; 
   position: absolute;
-  bottom: calc(60% + 16em); /* Adjust the position to be 60px above the bottom */
+  bottom: calc(60% + 13em);
   left: 50%;
   transform: translateX(-50%);
 }
 
 .message {
-  font-size: 3em;
+  font-size: 3.5em;
   letter-spacing: 0.15em;
   font-family: "Delicious Handrawn", serif;
   font-weight: 400;
@@ -30,7 +72,7 @@
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
-  color: #fdd14b; /* Set the font color to white */
+  color: #fdd14b; 
   animation: typing 4.4s, cursor 0.6s step-end infinite alternate;
 }
 
@@ -46,6 +88,25 @@
   }
   to {
     width: 100%;
+  }
+}
+
+@keyframes pop-up {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
@@ -67,7 +128,7 @@ body {
   width: 100%;
   height: 100%;
   filter: blur(0.1vmin);
-  background-image: radial-gradient(ellipse at top, transparent 0%, var(--dark-color)), radial-gradient(ellipse at bottom, var(--dark-color), rgba(255, 146, 21, 0.332)), repeating-linear-gradient(220deg, black 0px, black 19px, transparent 19px, transparent 22px), repeating-linear-gradient(189deg, black 0px, black 19px, transparent 19px, transparent 22px), repeating-linear-gradient(148deg, black 0px, black 19px, transparent 19px, transparent 22px), linear-gradient(90deg, #00fffa, #f0f0f0);
+  background-image: radial-gradient(ellipse at top, transparent 0%, var(--dark-color)), radial-gradient(ellipse at bottom, var(--dark-color), rgba(255, 146, 21, 0.073)), repeating-linear-gradient(220deg, black 0px, black 19px, transparent 19px, transparent 22px), repeating-linear-gradient(189deg, black 0px, black 19px, transparent 19px, transparent 22px), repeating-linear-gradient(148deg, black 0px, black 19px, transparent 19px, transparent 22px), linear-gradient(90deg, #ffbd8a, #f0f0f0);
 }
 
 .flowers {
@@ -1093,4 +1154,59 @@ body {
 
 .container * {
   animation-play-state: paused !important;
+}
+
+button {
+    font-family: inherit;
+    font-size: 14px; /* 30% smaller */
+    background: #393939;
+    color: white;
+    padding: 0.49em 0.7em; /* 30% smaller */
+    padding-left: 0.63em; /* 30% smaller */
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.2s;
+    cursor: pointer;
+    margin-top: 0.55em; /* Add margin-top to avoid overlapping */
+}
+
+button span {
+    display: block;
+    margin-left: 0.21em; /* 30% smaller */
+    transition: all 0.3s ease-in-out;
+    visibility: hidden; /* Make the text invisible */
+}
+
+button svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+}
+
+button:hover .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+button:hover svg {
+    transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+button:hover span {
+    transform: translateX(5em);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+    from {
+        transform: translateY(0.1em);
+    }
+    to {
+        transform: translateY(-0.1em);
+    }
 }
